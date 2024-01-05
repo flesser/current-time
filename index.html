@@ -18,9 +18,11 @@
         const today = new Date();
         let h = today.getHours();
         let m = today.getMinutes();
-        document.getElementById("currenttime").value =
+        const input = document.getElementById("currenttime");
+        inout.value =
           zeroPad(h, 2) + ":" + zeroPad(m, 2);
         setTimeout(setClock, 1000);
+        input.select();
       }
     </script>
   </body>
