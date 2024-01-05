@@ -19,7 +19,7 @@
         let h = today.getHours();
         let m = today.getMinutes();
         const input = document.getElementById("currenttime");
-        inout.value =
+        input.value =
           zeroPad(h, 2) + ":" + zeroPad(m, 2);
         setTimeout(setClock, 1000);
         input.select();
