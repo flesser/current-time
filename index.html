@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Aktuelle Uhrzeit für Copy+Paste</title>
+  </head>
+
+  <body onload="setClock()">
+    Aktuelle Uhrzeit:
+    <input type="text" id="currenttime" autofocus onfocus="this.select();" />
+
+    <script>
+      // https://stackoverflow.com/a/2998874
+      const zeroPad = (num, places) => String(num).padStart(places, "0");
+
+      // https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
+      function setClock() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        document.getElementById("currenttime").value =
+          zeroPad(h, 2) + ":" + zeroPad(m, 2);
+        setTimeout(setClock, 1000);
+      }
+    </script>
+  </body>
+</html>
